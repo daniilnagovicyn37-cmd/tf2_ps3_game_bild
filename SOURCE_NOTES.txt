@@ -1,0 +1,4 @@
+Build system: ps3dev/PSL1GHT RSX sample (rsxtest), transformed by scripts/patch_rsxtest.py.
+Upstream source: https://github.com/ps3dev/PSL1GHT
+Toolchain release metadata: https://api.github.com/repos/ps3dev/ps3dev/releases/latest
+This kit contains original prototype gameplay code; upstream RSX sample files are fetched during the remote build.
