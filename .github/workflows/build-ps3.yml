@@ -1,0 +1,31 @@
+
+name: Build PS3 test package
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main, master]
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y git build-essential python3
+
+      - name: Get PS3 toolchain
+        run: |
+          git clone --depth 1 https://github.com/ps3dev/ps3dev.git ps3dev
+          cd ps3dev
+          cat README.md
+
+      - name: Report build status
+        run: |
+          echo "Repository uploaded successfully."
+          echo "A complete PS3 toolchain setup is still required."
+          echo "This workflow does not yet build the game."
