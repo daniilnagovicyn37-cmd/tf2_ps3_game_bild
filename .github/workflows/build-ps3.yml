@@ -1,15 +1,3 @@
 name: Workflow test
-
-"on":
-push:
-branches:
-- main
-- master
-workflow_dispatch:
-
-jobs:
-test:
-runs-on: ubuntu-22.04
-steps:
-- name: Check
-run: echo "Workflow syntax works"
+'on': [push, workflow_dispatch]
+jobs: {test: {runs-on: ubuntu-22.04, steps: [{name: Check, run: 'echo Workflow syntax works'}]}}
